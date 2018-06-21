@@ -1,0 +1,67 @@
+
+<div class="bs-docs-header bg-opaque-black text-gray-lighter" id="docs-header">
+    <div class="container">
+        <h1>Ember Modules</h1>
+        <p>Drop-in modules ready for use in Project<sup>&reg;</sup> Ember projects.</p>
+    </div>
+</div>
+
+<div class="container bs-docs-container">
+    <div class="row">
+        <div class="col-md-9">
+            {{ui-component/sample-profile-image}}
+{{!--            <div class="bs-docs-section">
+                {{ui-component/sample-ui-modal}}
+            </div> --}}
+            {{ui-component/sample-big-button}}
+            {{ui-component/sample-toggle-switch}}
+            {{ui-component/sample-blurry-names}}
+        </div>
+        <div class="col-md-3">
+            {{#affix-sidebar}}
+                <ul class="nav bs-docs-sidenav">
+                    <li>
+                        <a href="#profile-image-intro">Profile Images</a>
+                        <ul class="nav">
+                            <li><a href="#profile-basic-example">Basic Example</a></li>
+                            <li><a href="#profile-image-sizes">Size Variations</a></li>
+                            <li><a href="#profile-image-shapes">Shape Variations</a></li>
+                        </ul>
+                    </li>
+{{!--                    <li>
+                        <a href="#modal-dialog-intro">Modal Dialog</a>
+                        <ul class="nav">
+                            <li><a href="#modal-basic-example">Basic Example</a></li>
+                            <li><a href="#modal-image-sizes">Size Variations</a></li>
+                        </ul>
+                    </li>
+                    --}}
+                    <li>
+                        <a href="#button-card-intro">Big Button Card</a>
+                        <ul class="nav">
+                            <li><a href="#button-basic-example">Basic Example</a></li>
+                            <li><a href="#button-card-options">Options</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#check-toggle-intro">Check Toggle</a>
+                        <ul class="nav">
+                            <li><a href="#check-toggle-basic-example">Basic Example</a></li>
+                            <li><a href="#check-toggle-sizes">Size Variations</a> </li>
+                            <li><a href="#check-toggle-colors">Color Variations</a></li>
+                            <li><a href="#check-toggle-options">Options</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#blurry-names-intro">Blurry Names</a>
+                        <ul class="nav">
+                            <li><a href="#blurry-names-basic-example">Basic Example</a></li>
+                            <li><a href="#blurry-names-variation">Alignment Variants</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            {{/affix-sidebar}}
+        </div>
+    </div>
+</div>
+{{outlet}}

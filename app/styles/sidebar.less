@@ -1,0 +1,37 @@
+.bs-docs-sidebar {
+    &.affix {
+        position: fixed;
+        top: 50px;
+    }
+    &.affix, &.affix-top, &.affix-bottom {
+        & .nav>li>a {
+            display: block;
+            padding: 4px 20px;
+            color: @link-color;
+        }
+    }
+    .nav {
+        &>.active {
+            &>ul {
+                display: block;
+            }
+            &, &:focus, &:hover {
+                &>a {
+                    font-weight: 700;
+                    color: @link-hover-color;
+                    border-left: 2px solid @link-hover-color;
+                }
+            }
+        }
+        .nav {
+            display: none;
+            padding-bottom: 10px;
+            &>li>a {
+                padding-top: 1px;
+                padding-bottom: 1px;
+                padding-left: 30px;
+                font-weight: 900;
+            }
+        }
+    }
+}

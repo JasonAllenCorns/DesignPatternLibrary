@@ -1,0 +1,36 @@
+
+.bs-glyphicons {
+    margin: 0 -10px 20px;
+    overflow: hidden;
+}
+.bs-glyphicons-list {
+     padding-left: 0;
+     list-style: none;
+ }
+.bs-glyphicons li {
+    float: left;
+    width: 25%;
+    height: 144px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid #fff;
+    overflow-x: hidden;
+    .glyphicon {
+        font-size: 20px;
+    }
+}
+@media (min-width: 768px) {
+    .bs-glyphicons {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .bs-glyphicons li {
+        width: 12.5%;
+    }
+    .bs-navbar-bottom-example .navbar-fixed-bottom, .bs-navbar-top-example .navbar-fixed-top {
+        position: absolute;
+    }
+}

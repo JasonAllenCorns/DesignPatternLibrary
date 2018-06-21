@@ -1,0 +1,19 @@
+body {
+    padding-top: 50px;
+}
+.row.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+    div[class*="col-"] {
+        display: flex;
+        .thumbnail {
+            flex: 1;
+        }
+    }
+}
+.fakeLink {cursor: pointer}

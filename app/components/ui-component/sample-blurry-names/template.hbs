@@ -1,0 +1,158 @@
+<h2 class="page-header" id="blurry-names-intro">Blurry Names</h2>
+<p class="lead">In instances where a visitor's name should be hidden from the current user, as in basic view of IRU and
+    Guestbook, a blurry stand-in can be used to simulate a name placement.</p>
+<p>Blurry Signatures rely on the css psuedo-selector <code>nth-of-type()</code> and uses an algorithm of <code>10n+i</code>, where <code>i</code> is an integer between 0 and 9.  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-of-type" target="_new"><code>nth-of-type</code> selectors</a> assume a specific structure that includes a common parent element.  Note that the <code>signature-item</code> elements, below, are all sibling selectors.</p>
+
+<div class="quote-panel quote-panel-warning">
+    <div class="quote-panel-heading"><h4>Sibling Selectors are required</h4></div>
+    <div class="quote-panel-body">
+        <code>nth-of-type</code> assumes that each <em>n</em> of the <em>type</em> is a sibling of the other <em>n-1</em> items of the same <em>type</em>.  The ancestral distance between <code>signature-item</code> and <code>sig-hidden</code> is inconsequential, since the <em>type</em>, here, is <em>tags with class <code>signature-item</code></em>.
+    </div>
+</div>
+
+<h3 id="blurry-names-basic-example">Basic Example</h3>
+<div class="bs-example">
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden"></span>
+                </li>
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden"></span>
+                </li>
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden"></span>
+                </li>
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden"></span>
+                </li>
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden"></span>
+                </li>
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden"></span>
+                </li>
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden"></span>
+                </li>
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden"></span>
+                </li>
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden"></span>
+                </li>
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;list-group&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<h3 id="blurry-names-variation">Alignment Variants</h3>
+<div class="bs-example">
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden sig-centered"></span>
+                </li>
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden sig-centered"></span>
+                </li>
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden sig-centered"></span>
+                </li>
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden sig-centered"></span>
+                </li>
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden sig-centered"></span>
+                </li>
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden sig-centered"></span>
+                </li>
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden sig-centered"></span>
+                </li>
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden sig-centered"></span>
+                </li>
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden sig-centered"></span>
+                </li>
+                <li class="signature-item list-group-item">
+                    <span class="sig-hidden sig-centered"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="highlight"><pre><code><span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;list-group&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden sig-centered&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden sig-centered&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden sig-centered&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden sig-centered&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden sig-centered&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden sig-centered&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden sig-centered&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden sig-centered&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden sig-centered&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;signature-item list-group-item&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sig-hidden sig-centered&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+

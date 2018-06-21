@@ -1,0 +1,94 @@
+<h1 id="badges" class="page-header">Badges</h1>
+
+<p class="lead">Easily highlight new or unread items by adding a <code>&lt;span class="badge"&gt;</code>
+    to links, Bootstrap navs, and more.</p>
+
+<div class="bs-example">
+    <a href="#">Inbox <span class="badge">42</span></a>
+</div>
+<div class="highlight">
+<pre><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>Inbox <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;badge&quot;</span><span class="p">&gt;</span>42<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre>
+</div>
+
+<h4>Self collapsing</h4>
+
+<p>When there are no new or unread items, badges will simply collapse (via CSS's <code>:empty</code>
+    selector) provided no content exists within.</p>
+
+<div class="quote-panel quote-panel-danger">
+    <div class="quote-panel-heading"><h4>Cross-browser compatibility</h4></div>
+
+    <div class="quote-panel-body"><p>Badges won't self collapse in Internet Explorer 8 because it lacks support for the
+        <code>:empty</code> selector.</p></div>
+</div>
+
+<h4>Adapts to active nav states</h4>
+
+<p>Built-in styles are included for placing badges in active states in pill navigations.</p>
+
+<div class="bs-example">
+    <ul class="nav nav-pills">
+        <li class="active"><a href="#">Home <span class="badge">42</span></a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Messages <span class="badge">3</span></a></li>
+    </ul>
+    <br>
+    <ul class="nav nav-pills nav-stacked" style="max-width: 260px;">
+        <li class="active">
+            <a href="#">
+                <span class="badge pull-right">42</span>
+                Home
+            </a>
+        </li>
+        <li><a href="#">Profile</a></li>
+        <li>
+            <a href="#">
+                <span class="badge pull-right">3</span>
+                Messages
+            </a>
+        </li>
+    </ul>
+    <br>
+    <button class="btn btn-primary" type="button">
+        Messages <span class="badge">4</span>
+    </button>
+</div>
+<div class="highlight">
+<pre><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;nav nav-pills nav-stacked&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;active&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;badge pull-right&quot;</span><span class="p">&gt;</span>42<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+            Home
+        <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    ...
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre>
+</div>
+
+<h4>Modifiers</h4>
+<p>Add a modifier to change the appearance of a badge.</p>
+<div class="bs-example">
+    <ul class="nav nav-pills">
+        <li><a>Default <span class="badge badge-default">42</span></a></li>
+        <li><a>Primary <span class="badge badge-primary">42</span></a></li>
+        <li><a>Secondary <span class="badge badge-secondary">42</span></a></li>
+        <li><a>Success <span class="badge badge-success">3</span></a></li>
+        <li><a>Info <span class="badge badge-info">42</span></a></li>
+        <li><a>Warning <span class="badge badge-warning">42</span></a></li>
+        <li><a>Danger <span class="badge badge-danger">42</span></a></li>
+    </ul>
+</div>
+<div class="highlight">
+<pre><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;nav nav-pills&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span><span class="p">&gt;</span>Default <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;badge badge-default&quot;</span><span class="p">&gt;</span>42<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span><span class="p">&gt;</span>Primary <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;badge badge-primary&quot;</span><span class="p">&gt;</span>42<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span><span class="p">&gt;</span>Secondary <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;badge badge-secondary&quot;</span><span class="p">&gt;</span>42<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span><span class="p">&gt;</span>Success <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;badge badge-success&quot;</span><span class="p">&gt;</span>3<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span><span class="p">&gt;</span>Info <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;badge badge-info&quot;</span><span class="p">&gt;</span>42<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span><span class="p">&gt;</span>Warning <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;badge badge-warning&quot;</span><span class="p">&gt;</span>42<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span><span class="p">&gt;</span>Danger <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;badge badge-danger&quot;</span><span class="p">&gt;</span>42<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre>
+</div>

@@ -1,0 +1,197 @@
+<h2 class="page-header" id="profile-image-intro">Profile Images</h2>
+<p class="lead">Provides a contextually-centered image, adjusted to completely cover a congruent area (square or circle).</p>
+<h3 id="profile-basic-example">Basic Example</h3>
+<div class="bs-example">
+    {{profile-image imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image blurred="true" imageSrc='/img/profiles/emmet.jpg'}}
+</div>
+<div class="highlight">
+<pre><code class="language-html" data-lang="html"><span class="cm">/* Basic implementation yields a square, small profile image */</span>
+<span class="nt">&lbrace;&lbrace;</span>profile-image <span class="na">imageSrc=</span><span class="s">"/img/profiles/emmet.jpg"</span> <span class="nt">&rbrace;&rbrace;</span>
+<span class="cm">/* adding 'blurred="true"' to the options converts to a pixelated base */</span>
+<span class="nt">&lbrace;&lbrace;</span>profile-image <span class="na">imageSrc=</span><span class="s">"/img/profiles/emmet.jpg"</span> <span class="na">blurred=</span><span class="s">"true"</span> <span class="nt">&rbrace;&rbrace;</span></code></pre>
+</div>
+<h3 id="profile-image-sizes">Size Variations</h3>
+<p>In addition to the standard (small) implementation, size can be specified by adding the <code>size="*"</code> modifier.</p>
+<div class="bs-example" id="profile-basic-example">
+    {{profile-image size="small" imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="medium" imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="large" imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="xlarge" imageSrc='/img/profiles/emmet.jpg'}}<br/>
+
+    {{profile-image blurred="true" size="small" imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image blurred="true" size="medium" imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image blurred="true" size="large" imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image blurred="true" size="xlarge" imageSrc='/img/profiles/emmet.jpg'}}
+</div>
+<div class="highlight">
+<pre><code class="language-html" data-lang="html"><span class="cm">/* Size variations are set as properties in the component options */</span>
+<span class="cm">/* size="small" */</span>
+<span class="nt">&lbrace;&lbrace;</span>profile-image <span class="na">size=</span><span class="s">"small"</span> <span class="na">imageSrc=</span><span class="s">"/img/profiles/emmet.jpg"</span> <span class="nt">&rbrace;&rbrace;</span>
+<span class="cm">/* size="medium" */</span>
+<span class="nt">&lbrace;&lbrace;</span>profile-image <span class="na">size=</span><span class="s">"medium"</span> <span class="na">imageSrc=</span><span class="s">"/img/profiles/emmet.jpg"</span> <span class="nt">&rbrace;&rbrace;</span>
+<span class="cm">/* size="large" */</span>
+<span class="nt">&lbrace;&lbrace;</span>profile-image <span class="na">size=</span><span class="s">"large"</span> <span class="na">imageSrc=</span><span class="s">"/img/profiles/emmet.jpg"</span> <span class="nt">&rbrace;&rbrace;</span>
+<span class="cm">/* size="xlarge" */</span>
+<span class="nt">&lbrace;&lbrace;</span>profile-image <span class="na">size=</span><span class="s">"xlarge"</span> <span class="na">imageSrc=</span><span class="s">"/img/profiles/emmet.jpg"</span> <span class="nt">&rbrace;&rbrace;</span></code></pre>
+</div>
+<h3 id="profile-image-shapes">Shape Variations</h3>
+<p>Profile Images also come in both squre or circle shape by adding the <code>shape="*"</code> option.</p>
+<div class="bs-example" id="profile-shape-example">
+    {{profile-image shape="square" imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image shape="circle" imageSrc='/img/profiles/emmet.jpg'}}
+</div>
+<div class="highlight">
+<pre><code class="language-html" data-lang="html"><span class="cm">/* Shape is set as a property, with square as default */</span>
+<span class="cm">/* shape="square" :: default */</span>
+<span class="nt">&lbrace;&lbrace;</span>profile-image <span class="na">imageSrc=</span><span class="s">"/img/profiles/emmet.jpg"</span> <span class="nt">&rbrace;&rbrace;</span>
+<span class="cm">/* shape="circle" */</span>
+<span class="nt">&lbrace;&lbrace;</span>profile-image <span class="na">shape=</span><span class="s">"circle"</span> <span class="na">imageSrc=</span><span class="s">"/img/profiles/emmet.jpg"</span> <span class="nt">&rbrace;&rbrace;</span></code></pre>
+</div>
+<h3 id="profile-image-shapes">Badge Variations</h3>
+<p>Profile images can also be badged!  Providing a property of <code>isPaid</code>, <code>isLocked</code>, <code>isUnLocked</code>, <code>isStarred</code>, will add a positioned badge to medium, large and x-large images.</p>
+<div class="bs-example" id="profile-basic-example">
+    {{profile-image size="small" shape="square" isPaid=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="medium" shape="square" isPaid=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="large" shape="square" isPaid=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="xlarge" shape="square" isPaid=true imageSrc='/img/profiles/emmet.jpg'}}<br/>
+
+    {{profile-image size="small" shape="circle" isPaid=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="medium" shape="circle" isPaid=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="large" shape="circle" isPaid=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="xlarge" shape="circle" isPaid=true imageSrc='/img/profiles/emmet.jpg'}}<br/>
+
+    {{profile-image size="small" shape="square" blurred=true isLocked=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="medium" shape="square" blurred=true isLocked=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="large" shape="square" blurred=true isLocked=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="xlarge" shape="square" blurred=true isLocked=true imageSrc='/img/profiles/emmet.jpg'}}<br/>
+
+    {{profile-image size="small" shape="circle" blurred=true isLocked=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="medium" shape="circle" blurred=true isLocked=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="large" shape="circle" blurred=true isLocked=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="xlarge" shape="circle" blurred=true isLocked=true imageSrc='/img/profiles/emmet.jpg'}}<br/>
+
+    {{profile-image size="small" shape="square" isUnlocked=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="medium" shape="square" isUnLocked=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="large" shape="square" isUnLocked=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="xlarge" shape="square" isUnLocked=true imageSrc='/img/profiles/emmet.jpg'}}<br/>
+
+    {{profile-image size="small" shape="circle" isUnLocked=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="medium" shape="circle" isUnLocked=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="large" shape="circle" isUnLocked=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="xlarge" shape="circle" isUnLocked=true imageSrc='/img/profiles/emmet.jpg'}}<br/>
+
+    {{profile-image size="small" shape="square" isStarred=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="medium" shape="square" isStarred=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="large" shape="square" isStarred=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="xlarge" shape="square" isStarred=true imageSrc='/img/profiles/emmet.jpg'}}<br/>
+
+    {{profile-image size="small" shape="circle" isStarred=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="medium" shape="circle" isStarred=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="large" shape="circle" isStarred=true imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="xlarge" shape="circle" isStarred=true imageSrc='/img/profiles/emmet.jpg'}}
+</div>
+<div class="highlight">
+<pre><code class="language-html" data-lang="html">
+<span class="cp">&lbrace;&lbrace;</span><span class="nv">profile-image</span> <span class="na">size</span><span class="o">=</span><span class="s2">&quot;small&quot;</span> <span class="na">shape</span><span class="o">=</span><span class="s2">&quot;circle&quot;</span> <span class="na">isPaid</span><span class="o">=</span><span class="nv">true</span> <span class="na">imageSrc</span><span class="o">=</span><span class="s1">&#39;/img/profiles/emmet.jpg&#39;</span><span class="cp">&rbrace;&rbrace;</span>
+<span class="cp">&lbrace;&lbrace;</span><span class="nv">profile-image</span> <span class="na">size</span><span class="o">=</span><span class="s2">&quot;medium&quot;</span> <span class="na">shape</span><span class="o">=</span><span class="s2">&quot;circle&quot;</span> <span class="na">isPaid</span><span class="o">=</span><span class="nv">true</span> <span class="na">imageSrc</span><span class="o">=</span><span class="s1">&#39;/img/profiles/emmet.jpg&#39;</span><span class="cp">&rbrace;&rbrace;</span>
+<span class="cp">&lbrace;&lbrace;</span><span class="nv">profile-image</span> <span class="na">size</span><span class="o">=</span><span class="s2">&quot;large&quot;</span> <span class="na">shape</span><span class="o">=</span><span class="s2">&quot;circle&quot;</span> <span class="na">isPaid</span><span class="o">=</span><span class="nv">true</span> <span class="na">imageSrc</span><span class="o">=</span><span class="s1">&#39;/img/profiles/emmet.jpg&#39;</span><span class="cp">&rbrace;&rbrace;</span>
+<span class="cp">&lbrace;&lbrace;</span><span class="nv">profile-image</span> <span class="na">size</span><span class="o">=</span><span class="s2">&quot;xlarge&quot;</span> <span class="na">shape</span><span class="o">=</span><span class="s2">&quot;circle&quot;</span> <span class="na">isPaid</span><span class="o">=</span><span class="nv">true</span> <span class="na">imageSrc</span><span class="o">=</span><span class="s1">&#39;/img/profiles/emmet.jpg&#39;</span><span class="cp">&rbrace;&rbrace;</span></code>
+</pre></div>
+
+<h3 id="profile-image-shapes">Badge Variations</h3>
+<p>Profile images can show count badges! Providing any value in the <code>badgeCount</code> property will fill a badge that floats above the image.</p>
+<div class="bs-example" id="profile-basic-example">
+    {{profile-image size="small" shape="square" badgeCount=18 imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="medium" shape="square" badgeCount=18 imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="large" shape="square" badgeCount=18 imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="xlarge" shape="square" badgeCount=18 imageSrc='/img/profiles/emmet.jpg'}}
+        <br>
+    {{profile-image size="small" shape="circle" badgeCount=18 imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="medium" shape="circle" badgeCount=18 imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="large" shape="circle" badgeCount=18 imageSrc='/img/profiles/emmet.jpg'}}
+    {{profile-image size="xlarge" shape="circle" badgeCount=18 imageSrc='/img/profiles/emmet.jpg'}}
+</div>
+<div class="highlight">
+<pre><code class="language-html" data-lang="html">
+<span class="cp">&lbrace;&lbrace;</span><span class="nv">profile-image</span> <span class="na">size</span><span class="o">=</span><span class="s2">&quot;large&quot;</span> <span class="na">shape</span><span class="o">=</span><span class="s2">&quot;square&quot;</span> <span class="na">badgeCount</span><span class="o">=</span><span class="m">18</span> <span class="na">imageSrc</span><span class="o">=</span><span class="s1">&#39;/img/profiles/emmet.jpg&#39;</span><span class="cp">&rbrace;&rbrace;</span>
+<span class="cp">&lbrace;&lbrace;</span><span class="nv">profile-image</span> <span class="na">size</span><span class="o">=</span><span class="s2">&quot;large&quot;</span> <span class="na">shape</span><span class="o">=</span><span class="s2">&quot;circle&quot;</span> <span class="na">badgeCount</span><span class="o">=</span><span class="m">18</span> <span class="na">imageSrc</span><span class="o">=</span><span class="s1">&#39;/img/profiles/emmet.jpg&#39;</span><span class="cp">&rbrace;&rbrace;</span>
+</code></pre></div>
+
+<div class="quote-panel quote-panel-warning" id="profile-image-yield">
+    <div class="quote-panel-heading"><h4>Content Yield</h4></div>
+    <div class="quote-panel-body">
+        <p>Like other components, the Profile Image will yield content. This yielded content will be rendered in a div with the class <code>overlay-container</code>. It will be layered over the image (regular or blurred) and underneath badges. This element is styled to match the dimensions and shape of the underlying profile image.</p>
+        <p>By default, yielded content may overflow the bounds of the profile-image. To prevent overflow, add the class <code>no-overflow</code> to the component.</p>
+    </div>
+</div>
+<h3 id="profile-image-options">Options</h3>
+<p></p>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped js-options-table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>type</th>
+            <th>default</th>
+            <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>shape</td>
+            <td>string</td>
+            <td>square</td>
+            <td>A shape identifier string; options are "square" | "circle".</td>
+        </tr>
+        <tr>
+            <td>size</td>
+            <td>string</td>
+            <td>small</td>
+            <td>A size modifier.  The size is appended to the default class name, via <code>classNameBindings</code>.  Recognized values are "small", "medium", "large", "xlarge".  The lowercased string match of one of these values will be the classname suffix, like <code>image-wrapper-small</code>.</td>
+        </tr>
+        <tr>
+            <td>imageSrc</td>
+            <td>string</td>
+            <td>''</td>
+            <td>A fully-qualified URI representing the image to display.</td>
+        </tr>
+        <tr>
+            <td>blurred</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>When true, the profile image is blurred using a Canvas 2d transformation.</td>
+        </tr>
+        <tr>
+            <td>isPaid</td>
+            <td>boolean</td>
+            <td>''</td>
+            <td>When true, the profile image is has a <code>cm+</code> badge.</td>
+        </tr>
+        <tr>
+            <td>isLocked</td>
+            <td>boolean</td>
+            <td>''</td>
+            <td>When true, the profile image is has a <code>lock</code> badge.</td>
+        </tr>
+        <tr>
+            <td>isUnLocked</td>
+            <td>boolean</td>
+            <td>''</td>
+            <td>When true, the profile image is has an <code>unlock</code> badge.</td>
+        </tr>
+        <tr>
+            <td>isStarred</td>
+            <td>boolean</td>
+            <td>''</td>
+            <td>When true, the profile image is has a <code>star</code> badge.</td>
+        </tr>
+        <tr>
+            <td>badgeCount</td>
+            <td>numeric</td>
+            <td>null</td>
+            <td>When not null, shows value inside a blue badge at top right.</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

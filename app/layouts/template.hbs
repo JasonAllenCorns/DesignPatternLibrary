@@ -1,0 +1,159 @@
+<div class="bs-docs-header bg-opaque-black text-gray-lighter" id="docs-header">
+    <div class="container">
+        <h1>Layouts <small>&amp;</small> Formats</h1>
+        <p>A predefined, structured set of formats and content layouts, applied per route.</p>
+    </div>
+</div>
+<div class="container bs-docs-container">
+    <div class="row">
+        <div class="col-md-9">
+            <h1 class="page-header" id="layouts">Layouts</h1>
+            <p>Each layout has several sections for content and several options. The base layouts described below can be extended if custom behavior is necessary, but this is discouraged. An example is the home page which is a three-column layout built in the one-column template.</p>
+            <p>For technical details on the layout components, <a href="http://bitbucket01.corp.sea1.cmates.com:7990/projects/SITEUI/repos/siteuicli/browse/LAYOUTS.md">see the documentation in the siteuicli repo</a>.</p>
+            <h1 class="page-header" id="one-column">One Column</h1>
+            <p>The one-column layout has a single section: <code>body</code>.</p>
+            <div class="bs-example">
+                <img src="/img/layouts/one-col.png"  class="img-responsive" alt="">
+            </div>
+            <div class="highlight">
+                Full-width variant of the one-column layout.
+            </div>
+            <h3 id="profile-image-options">Options</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped js-options-table">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>type</th>
+                        <th>default</th>
+                        <th>description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>hideFooter</td>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>Hides the page footer.</td>
+                    </tr>
+                    <tr>
+                        <td>fullWidth</td>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>Makes the layout full-width or fixed-width using the 'container' or 'container-fluid' class. New pages should set fullWidth to true.</td>
+                    </tr>
+                    <tr>
+                        <td>stickyNav</td>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>Show the fixed position sticky nav footer. The appearance of the sticky nav is also dependent on the viewport size and user membership.</td>
+                    </tr>
+                    <tr>
+                        <td>shouldShowBottomAd</td>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>Show the banner ad and flexpub position at the bottom of the body section. This content only appears when the viewport size is greater than the xs breakpoint.</td>
+                    </tr>
+                    <tr>
+                        <td>shouldShowBottomMobileAd</td>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>Show a rectangular ad at the bottom of the body section. This only applies when the viewport width is less than the xs breakpoint.</td>
+                    </tr>
+                    <tr>
+                        <td>shouldShowBottomFlexpub</td>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>Show a flexpub position adjacent to the banner ad at the bottom of the body section. This will only be visible if <code>shouldShowBottomAd</code> is also true.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h1 class="page-header" id="two-column-left">Two Column Left</h1>
+            <p>The two-column-left layout has three sections: <code>masthead</code>, <code>body</code>, and <code>merchandising</code>. The <code>merchandising</code> column is hidden at sm and xs sizes (less than 960px viewport width). It is ~320px wide when in fixed width mode (fullWidth = false) and 340px wide in the full width variant (fullWidth = true).</p>
+            <div class="bs-example">
+                <img src="/img/layouts/two-col-left-annotated.png"  class="img-responsive" alt="">
+            </div>
+            <div class="highlight">
+                Full-width variant of the two-column-left layout.
+            </div>
+        <h3 id="profile-image-options">Options</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped js-options-table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>type</th>
+                    <th>default</th>
+                    <th>description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>hideFooter</td>
+                    <td>boolean</td>
+                    <td>false</td>
+                    <td>Hides the page footer.</td>
+                </tr>
+                <tr>
+                    <td>fullWidth</td>
+                    <td>boolean</td>
+                    <td>false</td>
+                    <td>Makes the layout full-width or fixed-width using the 'container' or 'container-fluid' class. New pages should set fullWidth to true.</td>
+                </tr>
+                <tr>
+                    <td>stickyNav</td>
+                    <td>boolean</td>
+                    <td>true</td>
+                    <td>Show the fixed position sticky nav footer. The appearance of the sticky nav is also dependent on the viewport size and user membership.</td>
+                </tr>
+                <tr>
+                    <td>shouldShowBottomAd</td>
+                    <td>boolean</td>
+                    <td>true</td>
+                    <td>Show the banner ad and flexpub position at the bottom of the body section. This content only appears when the viewport size is greater than the xs breakpoint.</td>
+                </tr>
+                <tr>
+                    <td>shouldShowBottomMobileAd</td>
+                    <td>boolean</td>
+                    <td>true</td>
+                    <td>Show a rectangular ad at the bottom of the body section. This only applies when the viewport width is less than the xs breakpoint.</td>
+                </tr>
+                <tr>
+                    <td>shouldShowBottomFlexpub</td>
+                    <td>boolean</td>
+                    <td>true</td>
+                    <td>Show a flexpub position adjacent to the banner ad at the bottom of the body section. This will only be visible if <code>shouldShowBottomAd</code> is also true.</td>
+                </tr>
+                <tr>
+                    <td>oneColumnHeader</td>
+                    <td>boolean</td>
+                    <td>false</td>
+                    <td>If true, the container for the masthead is full width above the sm breakpoint. If false, it is md-8, matching the body section below.</td>
+                </tr>
+                <tr>
+                    <td>showFlexpubInRightHeader</td>
+                    <td>boolean</td>
+                    <td>false</td>
+                    <td>Show a flexpub position in the masthead row at the top of the marketing column. This will only appear if <code>oneColumnHeader</code> is also false.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <div class="col-md-3">
+            {{#affix-sidebar}}
+                <ul class="nav bs-docs-sidenav">
+                    <li>
+                        <a href="#layouts">Layouts</a>
+                        <ul class="nav">
+                            <li><a href="#one-column">One Column</a></li>
+                            <li><a href="#two-column-left">Two Column Left</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            {{/affix-sidebar}}
+        </div>
+    </div>
+</div>
+{{outlet}}

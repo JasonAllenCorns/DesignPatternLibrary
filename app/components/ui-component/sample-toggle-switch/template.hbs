@@ -1,0 +1,188 @@
+<h2 class="page-header" id="check-toggle-intro">Check Toggle</h2>
+<p class="lead">Replaces the default dual-state checkbox (_checked_ vs _unchecked_) with an iOS-style toggle slider.  Variant implementations provide changes in size, color, label text and toggle text.</p>
+<h3 id="check-toggle-basic-example">Basic Example</h3>
+<div class="bs-example">
+    {{check-toggle}}
+</div>
+<div class="quote-panel quote-panel-info">
+    <div class="quote-panel-heading"><h4>Data Binding</h4></div>
+    <div class="quote-panel-body">
+        <p>Looking to have the check toggle manipulate a controller property?  Set the <code>name</code> property of the check-toggle component to match the controller property.</p>
+        <p><a href="https://guides.emberjs.com/v2.3.0/templates/input-helpers/#toc_checkboxes">Ember Checkboxes</a> do not support a <code>value</code> property.</p>
+    </div>
+</div>
+<div class="quote-panel quote-panel-info">
+    <div class="quote-panel-heading"><h4>jQuery Selection</h4></div>
+    <div class="quote-panel-body">
+        <p>Ember gives an ID to the Check-Toggle label and associated checkbox.  To access the input with jQuery, use the attribute selector:<br/>
+        <code>$( "input[name='myCheckToggle']" )</code></p>
+    </div>
+</div>
+<div class="highlight">
+<pre><code class="language-html" data-lang="html"><span class="cm">/* Basic Example */</span>
+<span class="cp">&lbrace;&lbrace;</span><span class="nf">check-toggle</span><span class="cp">&rbrace;&rbrace;</span>
+</code></pre>
+</div>
+<h3 id="check-toggle-sizes">Size Variations</h3>
+<p>In addition to the standard (small) implementation, size can be specified by adding the <code>size="*"</code> modifier.</p>
+<div class="bs-example text-right">
+    {{#check-toggle checked-text="Go Ahead" open-text="Don't Do It" type="confirm-cancel" size="xl" name="someModelProperty" isChecked=true}}Extra-large, confirm-cancel, toggle switch{{/check-toggle}}<br/>
+    {{#check-toggle checked-text="On" open-text="Off" type="success-on" size="lg" name="anotherModelProperty" isChecked=aBooleanProperty value="myValue"}}Large, success-on, toggle switch isChecked: <strong>{{aBooleanProperty}}</strong>{{/check-toggle}}<br/>
+    {{#check-toggle checked-text="On" open-text="Off" type="success-on" size="md"}}Medium, success-on, toggle switch (default){{/check-toggle}}
+</div>
+<div class="highlight">
+<pre><code class="language-html" data-lang="html"><span class="cm">/* Size variations are set as properties in the component options */</span>
+<span class="cp">&lbrace;&lbrace;</span><span class="nf">#check-toggle</span>
+    <span class="na">checked-text</span><span class="o">=</span><span class="s2">&quot;Go Ahead&quot;</span>
+    <span class="na">open-text</span><span class="o">=</span><span class="s2">&quot;Don't Do It&quot;</span>
+    <span class="na">type</span><span class="o">=</span><span class="s2">&quot;success-on&quot;</span>
+    <strong><span class="na">size</span><span class="o">=</span><span class="s2">&quot;xl&quot;</span></strong>
+    <span class="na">name</span><span class="o">=</span><span class="s2">&quot;someModelProperty&quot;</span>
+    <span class="na">isChecked</span><span class="o">=</span><span class="nv">true</span>
+<span class="cp">&rbrace;&rbrace;</span>
+    Extra-large toggle switch
+<span class="cp">&lbrace;&lbrace;</span><span class="nf">/check-toggle</span><span class="cp">&rbrace;&rbrace;</span>
+<span class="cp">&lbrace;&lbrace;</span><span class="nf">#check-toggle</span>
+    <span class="na">checked-text</span><span class="o">=</span><span class="s2">&quot;On&quot;</span>
+    <span class="na">open-text</span><span class="o">=</span><span class="s2">&quot;Off&quot;</span>
+    <span class="na">type</span><span class="o">=</span><span class="s2">&quot;success-on&quot;</span>
+    <strong><span class="na">size</span><span class="o">=</span><span class="s2">&quot;lg&quot;</span></strong>
+    <span class="na">name</span><span class="o">=</span><span class="s2">&quot;anotherModelProperty&quot;</span>
+    <span class="na">isChecked</span><span class="o">=</span><span class="nv">aBooleanProperty</span>
+<span class="cp">&rbrace;&rbrace;</span>
+    Large toggle switch
+<span class="cp">&lbrace;&lbrace;</span><span class="nf">/check-toggle</span><span class="cp">&rbrace;&rbrace;</span>
+<span class="cp">&lbrace;&lbrace;</span><span class="nf">#check-toggle</span>
+    <span class="na">checked-text</span><span class="o">=</span><span class="s2">&quot;On&quot;</span>
+    <span class="na">open-text</span><span class="o">=</span><span class="s2">&quot;Off&quot;</span>
+    <span class="na">type</span><span class="o">=</span><span class="s2">&quot;success-on&quot;</span>
+<span class="cp">&rbrace;&rbrace;</span>
+    Medium toggle switch (default)
+<span class="cp">&lbrace;&lbrace;</span><span class="nf">/check-toggle</span><span class="cp">&rbrace;&rbrace;</span>
+</code></pre>
+</div>
+<h3 id="check-toggle-colors">Color Variations</h3>
+<p>Toggle Switches also come in a rainbow of color options.</p>
+<div class="bs-example text-right">
+    {{#check-toggle checked-text="On" open-text="Off" type="success-on" isChecked=true}}"Success-on" type{{/check-toggle}}<br/>
+    {{#check-toggle checked-text="On" open-text="Off" type="warning-on" isChecked=true}}"Warning-on" type{{/check-toggle}}<br/>
+    {{#check-toggle checked-text="On" open-text="Off" type="danger-on" isChecked=true}}"Danger-on" type{{/check-toggle}}<br/>
+    {{#check-toggle checked-text="Yes" open-text="No" type="yes-no" isChecked=true}}"Yes-No" type{{/check-toggle}}<br/>
+    {{#check-toggle checked-text="Confirm" open-text="Cancel" type="confirm-cancel" isChecked=true}}"Confirm-Cancel" type{{/check-toggle}}
+</div>
+<div class="highlight">
+<pre><code class="language-html" data-lang="html"><span class="cm">/* Color is set as a property */</span>
+<span class="cp">&lbrace;&lbrace;</span><span class="nf">#check-toggle</span>
+    <span class="na">checked-text</span><span class="o">=</span><span class="s2">&quot;On&quot;</span>
+    <span class="na">open-text</span><span class="o">=</span><span class="s2">&quot;Off&quot;</span>
+    <strong><span class="na">type</span><span class="o">=</span><span class="s2">&quot;success-on&quot;</span></strong>
+    <span class="na">isChecked</span><span class="o">=</span><span class="nv">true</span>
+<span class="cp">&rbrace;&rbrace;</span>
+    &quot;Success-on&quot; type
+<span class="cp">&lbrace;&lbrace;</span><span class="nf">/check-toggle</span><span class="cp">&rbrace;&rbrace;</span>
+<span class="cp">&lbrace;&lbrace;</span><span class="nf">#check-toggle</span>
+    <span class="na">checked-text</span><span class="o">=</span><span class="s2">&quot;On&quot;</span>
+    <span class="na">open-text</span><span class="o">=</span><span class="s2">&quot;Off&quot;</span>
+    <strong><span class="na">type</span><span class="o">=</span><span class="s2">&quot;warning-on&quot;</span></strong>
+    <span class="na">isChecked</span><span class="o">=</span><span class="nv">true</span>
+<span class="cp">&rbrace;&rbrace;</span>
+    &quot;Warning-on&quot; type
+<span class="cp">&lbrace;&lbrace;</span><span class="nf">/check-toggle</span><span class="cp">&rbrace;&rbrace;</span>
+<span class="cp">&lbrace;&lbrace;</span><span class="nf">#check-toggle</span>
+    <span class="na">checked-text</span><span class="o">=</span><span class="s2">&quot;On&quot;</span>
+    <span class="na">open-text</span><span class="o">=</span><span class="s2">&quot;Off&quot;</span>
+    <strong><span class="na">type</span><span class="o">=</span><span class="s2">&quot;danger-on&quot;</span></strong>
+    <span class="na">isChecked</span><span class="o">=</span><span class="nv">true</span>
+<span class="cp">&rbrace;&rbrace;</span>
+    &quot;Danger-on&quot; type
+<span class="cp">&lbrace;&lbrace;</span><span class="nf">/check-toggle</span><span class="cp">&rbrace;&rbrace;</span>
+<span class="cp">&lbrace;&lbrace;</span><span class="nf">#check-toggle</span>
+    <span class="na">checked-text</span><span class="o">=</span><span class="s2">&quot;Yes&quot;</span>
+    <span class="na">open-text</span><span class="o">=</span><span class="s2">&quot;No&quot;</span>
+    <strong><span class="na">type</span><span class="o">=</span><span class="s2">&quot;yes-no&quot;</span></strong>
+    <span class="na">isChecked</span><span class="o">=</span><span class="nv">true</span>
+<span class="cp">&rbrace;&rbrace;</span>
+    &quot;Yes-No&quot; type
+<span class="cp">&lbrace;&lbrace;</span><span class="nf">/check-toggle</span><span class="cp">&rbrace;&rbrace;</span>
+<span class="cp">&lbrace;&lbrace;</span><span class="nf">#check-toggle</span>
+    <span class="na">checked-text</span><span class="o">=</span><span class="s2">&quot;Confirm&quot;</span>
+    <span class="na">open-text</span><span class="o">=</span><span class="s2">&quot;Cancel&quot;</span>
+    <strong><span class="na">type</span><span class="o">=</span><span class="s2">&quot;confirm-cancel&quot;</span></strong>
+    <span class="na">isChecked</span><span class="o">=</span><span class="nv">true</span>
+<span class="cp">&rbrace;&rbrace;</span>
+    &quot;Confirm-Cancel&quot; type
+<span class="cp">&lbrace;&lbrace;</span><span class="nf">/check-toggle</span><span class="cp">&rbrace;&rbrace;</span></code></pre>
+</div>
+<div class="quote-panel quote-panel-warning" id="check-toggle-yield">
+    <div class="quote-panel-heading"><h4>Content Yield</h4></div>
+    <div class="quote-panel-body">
+        <p>The Toggle Switch component will yield any block content into the <code>label</code> tag.  <a href="https://www.w3.org/TR/html4/interact/forms.html#h-17.9.1">Following W3C recommendations</a>, have some consideration for proper HTML structure when designed content to yield.</p>
+        <p>Also note that the yield, here, uses the triple-brace syntax, <code>&lbrace;&lbrace;&lbrace;yield&rbrace;&rbrace;&rbrace;</code></p>
+    </div>
+</div>
+<h3 id="check-toggle-options">Options</h3>
+<p></p>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped js-options-table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>type</th>
+            <th>default</th>
+            <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>checked-text</td>
+            <td>string</td>
+            <td> <span class="text-muted">--</span> </td>
+            <td>The text to be shown when the underlying checkbox is checked</td>
+        </tr>
+        <tr>
+            <td>open-text</td>
+            <td>string</td>
+            <td> <span class="text-muted">--</span> </td>
+            <td>The text to be shown when the underlying checkbox is not checked</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>string</td>
+            <td> <span class="text-muted">--</span> </td>
+            <td>Invokes color variant of the toggle to one of the following presets:
+                <ul>
+                    <li>success-on</li>
+                    <li>warning-on</li>
+                    <li>danger-on</li>
+                    <li>yes-no</li>
+                    <li>confirm-cancel</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>size</td>
+            <td>string</td>
+            <td> "md" </td>
+            <td>The width of the toggle as defined by three presets:
+                <ul>
+                    <li>"md" (default): 60px wide and 30px tall</li>
+                    <li>"lg": 80px wide and 30px tall</li>
+                    <li>"xl": 100px wide and 30px tall</li>
+                </ul>
+                <div class="quote-panel quote-panel-info">
+                    <div class="quote-panel-heading"><h4>Explicit Widths</h4></div>
+                    <div class="quote-panel-body">
+                        <p>The background animation and motion of the handle are controlled by CSS transitions, which are very strict.  The position of the handle is changed by adjusting the "right" distance from 0px to (switch width - handle width), and cannot be calculated in CSS.  Therefor, the switch container <em>must</em> have a fixed width.</p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>toggleName</td>
+            <td>string</td>
+            <td>random generated string</td>
+            <td>Will be added to the input tag as the name property.  If omitted, will be set to a random string of characters.</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

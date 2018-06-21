@@ -1,0 +1,96 @@
+@gray-lightest: #c3c3c3;
+
+.ember-modal-wrapper {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+}
+
+.ember-modal-overlay {
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1550;
+}
+.ember-modal-dialog {
+    z-index: 1550;
+    position: fixed;
+
+    &.ember-modal-dialog-in-place {
+        position: relative;
+    }
+}
+
+.ember-modal-dialog {
+    border-radius: @border-radius-base;
+    background-color: @white;
+    box-shadow: 0 0 10px #222;
+    .modal-header, .modal-footer {
+        border-radius: @border-radius-base;
+        background-color: @gray-lightest;
+    }
+    .modal-header {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        h1, h2, h3, h4, h5, h6 {
+            line-height: 1.5;
+            margin: 0;
+        }
+    }
+    .modal-footer {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    &.modal-dialog-dark {
+        background-color: @gray-darker;
+        .modal-header, .modal-footer {
+            background-color: @gray-darkest;
+        }
+    }
+}
+.ember-modal-overlay.translucent {
+    background-color: fade(@modal-backdrop-bg, 50);
+}
+.modal-content {
+    -webkit-transition: width .75s;
+    transition: width .75s;
+    animation-name: fade-to-being;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.15s;
+}
+@keyframes fade-to-being {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@media (min-width: @screen-sm-min) {
+    .ember-modal-dialog {
+        &.modal-content {
+            width: @modal-md;
+            &.modal-content-fluid {
+                left: 0 !important;
+                margin-left: 8px !important;
+                margin-right: 8px;
+                min-width: 0;
+                max-width: 100%;
+                width: auto;
+            }
+            &.modal-content-small {
+                width: @modal-sm;
+            }
+        }
+    }
+}
+@media (min-width: @screen-md-min) {
+    .ember-modal-dialog.modal-content {
+        &.modal-content-large {
+            width: @modal-lg;
+        }
+    }
+}

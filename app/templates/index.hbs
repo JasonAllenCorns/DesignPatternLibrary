@@ -1,0 +1,113 @@
+<div class="jumbotron text-center intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="intro-message">
+                    <div class="page-header text-white">
+                        <h1>
+                            Project<sup>&reg;</sup> DPL<br/>
+                            <small class="text-white">A Style Guide and window into the Project<sup>&reg;</sup> Experience API.</small>
+                        </h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h4 class="text-muted">Shortcuts</h4>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="panel panel-secondary">
+                                        <div class="panel-heading">
+                                            <h4>Brand Colors</h4>
+                                        </div>
+                                        <div class="panel-body">
+                                            <h4>The who's who of <em>Primary, Secondary, Contextual and Opaque</em>.</h4>
+                                            <h4>See <a href="#brandColors">Brand Colors</a>, below.</h4>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <small>See also...</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">
+                                            <h4>Buttons</h4>
+                                        </div>
+                                        <div class="panel-body">
+                                            <h4>The driving forcing behind driving actions.</h4>
+                                            <h4><a href="#buttonTreatment">Button Treatment</a> is outlined below.</h4>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <small>See also...</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="panel panel-dark">
+                                        <div class="panel-heading">
+                                            <h4>Typography</h4>
+                                        </div>
+                                        <div class="panel-body">
+                                            <h4>Designers of <em>web</em>, Lovers of <em>type</em>, find your way under "<a href="#typography">Typography</a>"</h4>
+                                            <h4>Stay classy, type.</h4>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <small>See also...</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 bg-opaque-gray-darker">
+                                    <blockquote>
+                                        <p class="lead text-white">It is only by association with a product, a service, a business, or a corporation that a logo takes on any real meaning. It derives its meaning and usefulness from the quality of that which it symbolizes.</p>
+                                        <footer class="text-right">Paul Rand, on <cite>Logos, Flags and Escutcheons</cite></footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</div>
+<div class="container">
+    <div class="row" id="brandColors">
+        <div class="col-sm-4">
+            <h3 class="page-header">Brand Colors</h3>
+            <p class="text-right"><strong>Primary palettes</strong>, consisting of characteristic colors and pairings, establish powerful differentiators for a brand.  The dark orange, coupled with the modified-complimentary blue, creates the Project<sup>&reg;</sup> signature.</p>
+            <p class="text-right">The colors in our <strong>supporting palette</strong>, which work well as accent or backgroud colors for <em>type</em> and <em>imagery</em>, create opportunities for a broader brand experience.</p>
+            <p class="text-right">The <strong>gray harmony</strong> defines a subdued set of grays stepped out from the graytone of our primary orange.  These grays serve as subtle nuance to purpose and emphasis, and can be used for both background colors or text color.</p>
+        </div>
+        <div class="col-sm-8">
+            {{brand-colors}}
+        </div>
+    </div>
+</div>
+<div class="bg-lightest">
+    <div class="container">
+        <div class="row" id="buttonTreatment">
+            <div class="col-sm-4">
+                <h3 class="page-header">
+                    Buttons
+                </h3>
+            </div>
+            <div class="col-sm-8">
+                {{button-treatment}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row" id="typography">
+        <div class="col-sm-4">
+            <h3 id="type" class="page-header">Typography</h3>
+            <p class="text-right">Beautiful <strong>typography</strong> &mdash; as important to a design as a color palette &mdash; creates an immediate impression about the experience of a site, well before the user reads a word or takes an action.</p>
+        </div>
+        <div class="col-sm-8">
+            {{type-ography}}
+        </div>
+    </div>
+</div>
+{{outlet}}

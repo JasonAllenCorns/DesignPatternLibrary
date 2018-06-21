@@ -1,0 +1,12 @@
+<button {{action "toggleModal"}} class="btn btn-primary"><em class="glyphicon glyphicon-comment"></em> Toggle Modal</button>
+<div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title">Can Show Dialog</h3></div>
+    <div class="panel-body">
+        Value: {{canShowDialog}}
+    </div>
+</div>
+{{#modal-dialog canShowDialog=canShowDialog buttons=modalButtons veilClick=(action "veilClickHandler") closerClick=(action "closerClickHandler") buttonClick=(action "buttonClickHandler")}}
+    <p class="lead">
+        This is a call to all my past resignations.
+    </p>
+{{/modal-dialog}}
